@@ -1,12 +1,15 @@
 import { loadUserByPage } from '../uses-cases/load-users-by-page';
 
 const state = {
-	curretPage: 1,
+	curretPage: 0,
 	users: [],
 };
 
 const loadNextPage = async () => {
-	await loadUserByPage();
+	const users = await loadUserByPage(state.curretPage + 1);
+	if (!users.length === 0) rerturn;
+	state.curretPage += 1;
+	state.users = users;
 };
 const loadPreviusPage = async () => {
 	throw new Error('Not implemented!');
