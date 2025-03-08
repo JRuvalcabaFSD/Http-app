@@ -1,6 +1,7 @@
 import './style.css';
 import javascriptLogo from './javascript.svg';
 import viteLogo from '/vite.svg';
+import { usersApp } from './users/users-app';
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -10,10 +11,11 @@ document.querySelector('#app').innerHTML = `
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
     </a>
-    <h1 id="app-title">Breaking Bad App</h1>
+    <h1 id="app-title">Users App</h1>
     <div class="card loader">
     </div>
   </div>
 `;
 
 const element = document.querySelector('.card');
+usersApp(element);

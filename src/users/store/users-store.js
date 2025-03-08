@@ -1,13 +1,24 @@
+import { loadUserByPage } from '../uses-cases/load-users-by-page';
+
 const state = {
-	currentPage: 0,
+	curretPage: 1,
 	users: [],
 };
 
-const loadNextPage = async () => {};
-const loadPreviusPage = async () => {};
-const onUserChange = () => {};
-const realodPage = async () => {};
-const getUsers = () => [...state.users];
-const getCurrentPage = () => state.currentPage;
+const loadNextPage = async () => {
+	await loadUserByPage();
+};
+const loadPreviusPage = async () => {
+	throw new Error('Not implemented!');
+};
+const onUserChange = () => {
+	throw new Error('Not implemented!');
+};
+const realoadPage = async () => {
+	throw new Error('Not implemented!');
+};
 
-export default { loadNextPage, loadPreviusPage, onUserChange, realodPage, getUsers, getCurrentPage };
+const getUsers = () => [...state.users];
+const currentPage = () => state.curretPage;
+
+export default { loadNextPage, loadPreviusPage, onUserChange, realoadPage, getUsers, currentPage };
