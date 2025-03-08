@@ -21,7 +21,11 @@ const realoadPage = async () => {
 	throw new Error('Not implemented!');
 };
 
+/**
+ *
+ * @returns {User[]}
+ */
 const getUsers = () => [...state.users];
-const currentPage = () => state.curretPage;
+const getCurrentPage = () => state.curretPage;
 
-export default { loadNextPage, loadPreviusPage, onUserChange, realoadPage, getUsers, currentPage };
+export default { loadNextPage, loadPreviusPage, onUserChange, realoadPage, getUsers, getCurrentPage };
