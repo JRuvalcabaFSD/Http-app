@@ -47,7 +47,7 @@ export const RenderTable = (element) => {
         <td>${user.balance}</td>
         <td>${user.firstName}</td>
         <td>${user.lastName}</td>
-        <td>${user.isActive}</td>
+        <td>${user.isActive ? '✔' : '❌'}</td>
         <td>
           <a href="#/" data-id="${user.id}">Select</a>
           |
