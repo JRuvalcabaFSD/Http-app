@@ -39,7 +39,12 @@ const onUserChange = (updateUser) => {
 	}
 };
 const realoadPage = async () => {
-	throw new Error('Not implemented!');
+	const users = await loadUserByPage(state.curretPage);
+	if (users.length === 0) {
+		await loadPreviusPage();
+		return;
+	}
+	state.users = users;
 };
 const setLastPage = (lastPage) => {
 	if (lastPage) state.lastPage = lastPage;
