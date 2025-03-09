@@ -50,6 +50,9 @@ export const renderModal = (element, callback) => {
 		e.preventDefault();
 		const formData = new FormData(form);
 		const userLike = { ...loaderUser };
+		if (!formData.has('isActive')) {
+			formData.append('isActive', '0');
+		}
 		for (const [key, value] of formData) {
 			if (key === 'balance') {
 				userLike[key] = +value;
@@ -64,6 +67,7 @@ export const renderModal = (element, callback) => {
 		}
 
 		await callback(userLike);
+		hideModal();
 	});
 
 	modal.addEventListener('click', (e) => {
